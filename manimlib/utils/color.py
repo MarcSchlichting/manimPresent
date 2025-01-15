@@ -166,11 +166,17 @@ def get_colormap_list(
     map_name: str = "viridis",
     n_colors: int = 9
 ) -> Vect3Array:
+    """
+    Options for map_name:
+    3b1b_colormap
+    [All available colormaps on matplotlib]
+    """
     from matplotlib import colormaps
 
     if map_name == "3b1b_colormap":
         rgbs = np.array([color_to_rgb(color) for color in COLORMAP_3B1B])
     else:
+        # rgbs = cmaps_listed[map_name].colors  # Make more general?
         cmap = colormaps[map_name]
-        rgbs = cmap(np.linspace(0,1,256))   
+        rgbs = cmap(np.linspace(0,1,256))[:,:3]
     return resize_with_interpolation(np.array(rgbs), n_colors)
