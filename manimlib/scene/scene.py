@@ -833,6 +833,8 @@ class Scene(object):
         propagate_event = EVENT_DISPATCHER.dispatch(EventType.KeyPressEvent, **event_data)
         if propagate_event is not None and propagate_event is False:
             return
+        
+        forward_keys = [PygletWindowKeys.RIGHT, PygletWindowKeys.PAGEDOWN]  #add more forward keys here
 
         if char == manim_config.key_bindings.reset:
             self.play(self.camera.frame.animate.to_default_state())
@@ -844,7 +846,8 @@ class Scene(object):
         elif char == manim_config.key_bindings.quit and (modifiers & (PygletWindowKeys.MOD_COMMAND | PygletWindowKeys.MOD_CTRL)):
             self.quit_interaction = True
         # Space or right arrow
-        elif char == " " or symbol == PygletWindowKeys.RIGHT:
+        
+        elif (char == " ") or (symbol in forward_keys):
             self.hold_on_wait = False
 
     def on_resize(self, width: int, height: int) -> None:
