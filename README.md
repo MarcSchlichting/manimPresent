@@ -3,6 +3,7 @@
         <img src="https://raw.githubusercontent.com/3b1b/manim/master/logo/cropped.png">
     </a>
 </p>
+**This is a fork intended to make Manim more friendly for presentations.**
 
 [![pypi version](https://img.shields.io/pypi/v/manimgl?logo=pypi)](https://pypi.org/project/manimgl/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
