@@ -22,6 +22,7 @@ default:
     \usepackage{xcolor}
     \usepackage{microtype}
     \usepackage{pifont}
+    \usepackage{booktabs}
     \DisableLigatures{encoding = *, family = * }
     \linespread{1}
 
